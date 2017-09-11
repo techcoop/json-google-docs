@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON-Google-Docs</title>
+    <script src="json-google-docs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+    <style>
+        body {
+            height: 100%;
+        }
+
+        .tc-button {
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            background-color: #444;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        .tc-content {
+            margin: 10px 5px 5px 5px;
+            padding: 25px;
+        }
+
+        .tc-form {
+            padding: 20px;
+            position: relative;
+            border-radius: 5px;
+            border: 1px solid #444;
+            width: 300px;
+            margin: 15px 20px;
+        }
+
+        .tc-form__submit {
+            position:absolute;
+        }
+
+        .tc-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tc-list__item {
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 5px;
+            width: 300px;
+            margin: 5px;
+            position: relative;
+        }
+
+        .tc-list__button {
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+
+        .tc-image {
+            width: 200px;
+            height: 270px;
+            margin-left: 50px;
+        }
+
+        .tc-footnote {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JSON-Google-Docs - <span id="demo-page-title">Loading...</span></h1>
+    <div class="tc-menu">
+        <a href="#Home" class="tc-button">Home</a>
+        <a href="#Contact" class="tc-button">Contact</a>
+        <a href="#Products" class="tc-button">Products</a>
+    </div>
+
+    <div id="site-content" class="tc-content"></div>
+
+    <script type="text/html" id="Home">
+        <h2>Home</h2>
+        <% _.forEach(data.Main[language], function(item) { %>
+            <p><%- item %></p>
+        <% }) %>
+        <div class="tc-footnote"><%- data.Footnote[language] %></div>
+    </script>
+
+    <script type="text/html" id="Contact">
+        <h2>Contact</h2>
+        <% _.forEach(data.Introduction[language], function(item) { %>
+            <p><%- item %></p>
+        <% }) %>
+        <form class="tc-form" id="demo-contact-form" method="post">
+            <label>
+                Email:
+                <input type="text" size="20">
+            </label>
+            <input type="submit" value="Contact Us!" class="tc-form__submit">
+        </form>
+    </script>
+
+    <script type="text/html" id="Products">
+        <h2>Products</h2>
+        <% _.forEach(data.Introduction[language], function(item) { %>
+            <p><%- item %></p>
+        <% }) %>
+        <br />
+        <div class="tc-list">
+        <% _.forEach(data.List, function(item, key) { %>
+            <div class="tc-list__item">
+                <h3><%- key %></h3>
+                <a href="<%- item['Url'] %>">
+                    <img src="<%- item['Image'] %>" class="tc-image" />
+                </a>
+                <p style="padding-bottom:50px;"><%- item[language] %></p>
+                <a href="<%- item['Url'] %>" class="tc-button tc-list__button">
+                    Purchase
+                </a>
+            </div>
+        <% }) %>
+        </div>
+    </script>
+
+    <script>
+      // Pre compile page templates
+      var templates = {};
+      templates['Home'] = _.template(document.getElementById('Home').innerHTML, null, {'imports': {'context': this}})
+      templates['Contact'] = _.template(document.getElementById('Contact').innerHTML, null, {'imports': {'context': this}})
+      templates['Products'] = _.template(document.getElementById('Products').innerHTML, null, {'imports': {'context': this}})
+
+      // Get a reference to our site content element
+      var element = document.getElementById('site-content')
+
+      // Setup our remote document
+      var url = 'https://script.googleusercontent.com/macros/echo?user_content_key=hqAM2uUtmlnuSybtM-GbVnbqBG864jAwf7wPuMjLNY87kFc58orubUuGr2s4w_nU_2XbOUdnOhQYqydGFSerxTZcYg2lq4EUm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnKHUxXDtU9d-4s_ZDMMZ5puQfuxCLCTCap-xNYsg5JYoTjyvpSz_6jTgQHY_bPxQKPKfVnhjI6Uu&lib=Mb46ZgXAGNpXApDvE_4m9szZqqPiN-w-P'
+      var doc = new JSONGoogleDocs.Document(url)
+
+      // Fetch document content
+      doc.fetch().then(function() {
+        if (!window.location.hash) {
+          window.location.hash = 'Home'
+        } else {
+          renderPage()
+        }
+
+        // Apply title to page when it loads
+        var title = document.getElementById('demo-page-title')
+        title.innerHTML = doc.get('Title');
+      })
+
+      // When the hash changes, update content
+      window.addEventListener('hashchange', renderPage, false)
+      function renderPage() {
+        // Get page
+        var page = window.location.hash.replace('#', '')
+        var data = doc.get(page)
+
+        // Set contents of element to template
+        element.innerHTML = templates[page]({data: data, language: 'English'})
+
+        // Bind form submit handler for contact page
+        if (page === 'Contact') {
+          var form = document.getElementById('demo-contact-form')
+          form.onsubmit = function (e) {
+            // Prevent regular form submission behavior
+            e.preventDefault()
+
+            // Reset content div
+            form.innerHTML = data['Success']['English']
+          }
+        }
+      }
+    </script>
+</body>
+</html>

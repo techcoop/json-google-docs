@@ -23,27 +23,10 @@
  */
 
 /*
- * Tech Cooperative - Serverless-CMS
- * 
- * Full Instructions:
- * https://github.com/techcoop/serverless-cms
- * 
- * TO USE:
- * 1) Change the values below as needed
- * 2) Click on Publish and select "Deploy as web app"
- * 3) Select new and type a version name (e.g 0.1.0) (or update existing)
- * 4) In "Execute the app as" select yourself
- * 5) In "Who has access to the app" Select "Anyone, even anonymous"
- * 6) Click Update
- * 8) Click Deploy or Update
- * 9) To Authorize application, click "Review Permissions"
- * 10) Review permissions required, and click "Allow"
- * 11) Copy and paste the URL and get GET will fetch content
+ * Tech Cooperative - json-google-docs
  *
- * TO TEST:
- * 1) Change the testData in test_get()
- * 2) Move to Run in the top menu)
- * 3) Click function test_get()
+ * Installation:
+ * https://github.com/techcoop/json-google-docs
  */
 
 // TODO add authentication support
@@ -160,7 +143,7 @@ function nestedObjectValue(tree, value) {
 }
 
 function nest(target, key) {
-  obj = {}
+  var obj = {}
   obj[key] = target
   return obj
 }

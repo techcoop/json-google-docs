@@ -1,0 +1,8 @@
+# Output directories
+/lib/
+/out/
+
+# System files
+node_modules/
+devnodejsnpm-cache/
+npm-debug.log
