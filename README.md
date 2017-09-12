@@ -100,10 +100,17 @@ yarn run release
 # Examples
 
 ### Demo
+You can see a demo for this:
+https://techcoop.github.io/json-google-docs/
+
+You can see the original google docs here:
+https://docs.google.com/document/d/1bWzB8QWraOfoYG_ptIBTGz0aRWphbiXLvKWg-zs1gz4/edit
+
+You can see the JSON source here:
 https://script.googleusercontent.com/macros/echo?user_content_key=hqAM2uUtmlnuSybtM-GbVnbqBG864jAwf7wPuMjLNY87kFc58orubUuGr2s4w_nU_2XbOUdnOhQYqydGFSerxTZcYg2lq4EUm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnKHUxXDtU9d-4s_ZDMMZ5puQfuxCLCTCap-xNYsg5JYoTjyvpSz_6jTgQHY_bPxQKPKfVnhjI6Uu&lib=Mb46ZgXAGNpXApDvE_4m9szZqqPiN-w-P
 
 # TODO
-- TODO implement search on URL
+- TODO implement search or nested element fetching
 
 # Contributors
 [colin@techcoop.group](admin) 
