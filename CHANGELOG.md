@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/techcoop/json-google-docs/compare/v0.1.0...v0.1.1) (2017-09-12)
+
+
+### Bug Fixes
+
+* Adds language handling to demo website, adds details in home and readme with original google doc and source ([#2](https://github.com/techcoop/json-google-docs/issues/2)) ([a629d04](https://github.com/techcoop/json-google-docs/commit/a629d04))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2017-09-11)
 
