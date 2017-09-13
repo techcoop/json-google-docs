@@ -5,86 +5,26 @@
     <title>JSON-Google-Docs</title>
     <script src="json-google-docs.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
-    <style>
-        body {
-            height: 100%;
-        }
-
-        .tc-button {
-            margin: 10px;
-            font-size: 20px;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            background-color: #444;
-            padding: 15px;
-            text-decoration: none;
-        }
-
-        .tc-content {
-            margin: 10px 5px 5px 5px;
-            padding: 25px;
-        }
-
-        .tc-form {
-            padding: 20px;
-            position: relative;
-            border-radius: 5px;
-            border: 1px solid #444;
-            width: 300px;
-            margin: 15px 20px;
-        }
-
-        .tc-form__submit {
-            position:absolute;
-        }
-
-        .tc-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .tc-list__item {
-            border: 1px solid #444;
-            border-radius: 5px;
-            padding: 5px;
-            width: 300px;
-            margin: 5px;
-            position: relative;
-        }
-
-        .tc-list__button {
-            position: absolute;
-            right: 5px;
-            bottom: 5px;
-        }
-
-        .tc-image {
-            width: 200px;
-            height: 270px;
-            margin-left: 50px;
-        }
-
-        .tc-footnote {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-        }
-
-        .tc-languages {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>JSON-Google-Docs - <span id="demo-page-title">Loading...</span></h1>
-    <div class="tc-languages">
-        <a href="?language=English" data-language="English" onclick="return changeLanguage(this);">English</a>
-        /
-        <a href="?language=French" data-language="French" onclick="return changeLanguage(this);">French</a>
+
+    <div class="tc-menu">
+        <div class="tc-title">
+            JSON-Google-Docs - <span id="demo-page-title">Loading...</span>
+        </div>
+        <div class="tc-languages tc-center">
+            <a href="?language=English" data-language="English" onclick="return changeLanguage(this);">EN</a>
+            /
+            <a href="?language=French" data-language="French" onclick="return changeLanguage(this);">FR</a>
+        </div>
+        <div class="tc-source tc-center">
+            <a href="https://github.com/techcoop/json-google-docs">
+                <div class="tc-icon tc-icon-github-com"></div>
+            </a>
+        </div>
     </div>
+
     <div class="tc-menu">
         <a href="#Home" class="tc-button">Home</a>
         <a href="#Contact" class="tc-button">Contact</a>
