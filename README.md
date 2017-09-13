@@ -3,7 +3,9 @@
 
 Uses Google Apps Scripts with Google Docs to provide a document tree in JSON exposed on a GET URL for integration into anything.
 
-##### Warning: This is still experimental, it will update as you type if you use it live
+https://techcoop.github.io/json-google-docs/
+
+##### Warning: This is should be considered extremely experimental
 
 # Requirements
 
