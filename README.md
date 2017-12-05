@@ -20,7 +20,7 @@ https://techcoop.github.io/json-google-docs/
 1) Open your google doc document
 2) Click on "Tools" > "Script Editor..."
 3) Name your project something memorable
-4) Replace contents of code.gs with [this file](https://github.com/techcoop/json-google-docs/src/GoogleScript/Code.gs)
+4) Replace contents of code.gs with [this file](https://github.com/techcoop/json-google-docs/blob/master/src/GoogleScript/Code.gs)
 4) Click on Publish and select "Deploy as web app"
 5) Select new and type a version name (e.g 0.1.0) (or update existing)
 6) In "Execute the app as" select yourself
