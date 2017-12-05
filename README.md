@@ -29,7 +29,7 @@ https://techcoop.github.io/json-google-docs/
 9) Click "Review Permissions", to Authorize application
 10) When you see a warning, Click "Advanced" and "Go to json-google-docs Demo"
 10) Review list of  permissions required, and click "Allow"
-11) Copy and paste URL
+11) Copy and paste URL (note: if you're logged into multiple Google accounts you'll [have to manually remove "/u/0" or similar from the URL](https://stackoverflow.com/a/47050007/4869657) to avoid errors)
 
 ### NPM package
 
