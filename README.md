@@ -47,7 +47,7 @@ const uri = 'https://script.googleusercontent.com/macros/echo?user_content_key=h
 const doc = new Document(uri)
 
 doc.fetch().then(() => {
-  console.log(document.get('Title'))
+  console.log(doc.get('Title'))
 })
 ```
 
@@ -58,7 +58,7 @@ var uri = 'https://script.googleusercontent.com/macros/echo?user_content_key=hqA
 var doc = new JSONGoogleDocs.Document(uri)
 
 doc.fetch().then(function() {
-  console.log(document.get('Title'))
+  console.log(doc.get('Title'))
 })
 ```
 
@@ -73,7 +73,7 @@ var url = 'https://script.googleusercontent.com/macros/echo?user_content_key=hqA
 var doc = new JSONGoogleDocs.Document(url)
 
 doc.fetch().then(function() {
-  console.log(document.get('Title'))
+  console.log(doc.get('Title'))
 })
 ```
 
