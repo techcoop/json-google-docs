@@ -20,7 +20,7 @@ https://techcoop.github.io/json-google-docs/
 1) Open your google doc document
 2) Click on "Tools" > "Script Editor..."
 3) Name your project something memorable
-4) Replace contents of code.gs with [this file](https://github.com/techcoop/json-google-docs/src/GoogleScript/Code.gs)
+4) Replace contents of code.gs with [this file](https://github.com/techcoop/json-google-docs/blob/master/src/GoogleScript/Code.gs)
 4) Click on Publish and select "Deploy as web app"
 5) Select new and type a version name (e.g 0.1.0) (or update existing)
 6) In "Execute the app as" select yourself
@@ -29,7 +29,7 @@ https://techcoop.github.io/json-google-docs/
 9) Click "Review Permissions", to Authorize application
 10) When you see a warning, Click "Advanced" and "Go to json-google-docs Demo"
 10) Review list of  permissions required, and click "Allow"
-11) Copy and paste URL
+11) Copy and paste URL (note: if you're logged into multiple Google accounts you'll [have to manually remove "/u/0" or similar from the URL](https://stackoverflow.com/a/47050007/4869657) to avoid errors)
 
 ### NPM package
 
@@ -47,7 +47,7 @@ const uri = 'https://script.googleusercontent.com/macros/echo?user_content_key=h
 const doc = new Document(uri)
 
 doc.fetch().then(() => {
-  console.log(document.get('Title'))
+  console.log(doc.get('Title'))
 })
 ```
 
@@ -58,7 +58,7 @@ var uri = 'https://script.googleusercontent.com/macros/echo?user_content_key=hqA
 var doc = new JSONGoogleDocs.Document(uri)
 
 doc.fetch().then(function() {
-  console.log(document.get('Title'))
+  console.log(doc.get('Title'))
 })
 ```
 
@@ -73,7 +73,7 @@ var url = 'https://script.googleusercontent.com/macros/echo?user_content_key=hqA
 var doc = new JSONGoogleDocs.Document(url)
 
 doc.fetch().then(function() {
-  console.log(document.get('Title'))
+  console.log(doc.get('Title'))
 })
 ```
 
