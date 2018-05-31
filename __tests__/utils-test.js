@@ -13,11 +13,15 @@ describe('Utils - When using extractNested', function() {
     expect(extractNested(data)).toEqual(data)
   })
 
-  it('It should a single entry when passed a string', function() {
+  it('It should return a single entry when passed a string', function() {
     expect(extractNested({field: 'value'}, 'field')).toEqual('value')
+  }) 
+
+  it('It should be case insensitive', function() {
+    expect(extractNested({field: 'value'}, 'Field')).toEqual('value')
   })
 
-  it('It should a nested object when passed an array of fields', function() {
+  it('It should return a nested object when passed an array of fields', function() {
     const nested = {
       nest1: {
         nest2: {
@@ -28,4 +32,5 @@ describe('Utils - When using extractNested', function() {
 
     expect(extractNested(nested, ['nest1', 'nest2'])).toEqual({field: 'value'})
   })
+
 })
