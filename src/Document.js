@@ -14,22 +14,24 @@ class Document {
   get (fields) {
     return extractNested(this.data, fields)
   }
-
+  
   fetch () {
     return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest()
-        xhr.open('GET', this.url)
-        xhr.onload = () => {
-          const response = JSON.parse(xhr.responseText)
-          if (response.data) {
-            this.data = response.data
-          }
-
-          resolve()
+      const xhr = new XMLHttpRequest()
+      xhr.open('GET', this.url)
+      xhr.onload = () => {
+        const response = JSON.parse(xhr.responseText)
+        if (response.data) {
+          this.data = response.data
         }
-        xhr.onerror = () => reject(xhr.statusText)
-        xhr.send()
-      })
+
+        resolve()
+      }
+      xhr.onerror = () => reject(xhr.statusText)
+      xhr.send()
+    }).catch(error => {
+      console.error(error)
+    })
   }
 }
 
