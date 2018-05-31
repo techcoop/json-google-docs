@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/techcoop/json-google-docs/compare/v0.1.4...v0.1.5) (2018-05-31)
+
+
+### Bug Fixes
+
+* Fixes xhr request in node and updates node example ([#6](https://github.com/techcoop/json-google-docs/issues/6)) ([dee7847](https://github.com/techcoop/json-google-docs/commit/dee7847))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/techcoop/json-google-docs/compare/v0.1.3...v0.1.4) (2018-05-31)
 
