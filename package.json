@@ -84,5 +84,8 @@
         "NODE_ENV": "production"
       }
     }
+  },
+  "dependencies": {
+    "xhr2": "^0.1.4"
   }
 }
