@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/techcoop/json-google-docs/compare/v0.2.0...v0.2.1) (2018-05-31)
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/techcoop/json-google-docs/compare/v0.1.4...v0.1.5) (2018-05-31)
 
