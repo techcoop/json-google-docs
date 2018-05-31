@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Tech Cooperative (https://techcoop.group)
+ * Copyright (c) 2018 Tech Cooperative (https://techcoop.group)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -133,9 +133,9 @@ function nestedObjectValue(tree, value) {
   var obj = {}
   for (var i = tree.length; i--;) {
     if (i === tree.length - 1) {
-      obj[tree[i]] = value
+      obj[tree[i].toLowerCase()] = value
     } else {
-      obj = nest(obj, tree[i])
+      obj = nest(obj, tree[i].toLowerCase())
     }
   }
   

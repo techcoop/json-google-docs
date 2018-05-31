@@ -17,8 +17,9 @@ export const extractNested = (data, fields) => {
   // Iterate fields
   let extracted = data
   Object.keys(fields).map((item) => {
-    if (extracted[fields[item]]) {
-      extracted = extracted[fields[item]]
+    const key = fields[item].toLowerCase()
+    if (extracted[key]) {
+      extracted = extracted[key]
     }
   })
 
